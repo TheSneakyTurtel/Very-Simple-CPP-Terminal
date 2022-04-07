@@ -30,7 +30,7 @@ std::vector<CommandDefinition> implementedCommands = {
             const std::string seperator = ", ";
             std::string separatedNames = "";
 
-            for (auto name = entry.names.begin(); name != entry.names.end(); name++) separatedNames += seperator + *name;
+            for (auto& name : entry.names) separatedNames += seperator + name;
             separatedNames = separatedNames.substr(seperator.length());
 
             info += separatedNames + ":\t" + entry.description + "\n\n";
